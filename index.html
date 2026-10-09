@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Study Planner</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <h1>My Study Planner</h1>
+    </header>
+
+    <main class="container">
+      <section class="welcome card" aria-labelledby="welcome-title">
+        <h2 id="welcome-title">Welcome back, student!</h2>
+        <p>
+          Small steps every day add up. Plan your study tasks, stay consistent,
+          and celebrate each one you finish.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="add-task-title">
+        <h2 id="add-task-title">Add a study task</h2>
+        <form id="task-form" novalidate>
+          <div class="form-group">
+            <label for="task-name">Task name</label>
+            <input
+              type="text"
+              id="task-name"
+              name="taskName"
+              maxlength="80"
+              placeholder="Example: Review biology notes"
+              autocomplete="off"
+            />
+            <p id="name-error" class="error" role="alert"></p>
+          </div>
+
+          <div class="form-group">
+            <label for="due-date">Due date</label>
+            <input type="date" id="due-date" name="dueDate" />
+            <p id="date-error" class="error" role="alert"></p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Add task</button>
+        </form>
+      </section>
+
+      <section class="summary" aria-label="Task summary">
+        <div class="summary-card">
+          <span id="total-count">0</span>
+          <p>Total tasks</p>
+        </div>
+        <div class="summary-card">
+          <span id="completed-count">0</span>
+          <p>Completed</p>
+        </div>
+        <div class="summary-card">
+          <span id="remaining-count">0</span>
+          <p>Remaining</p>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="task-list-title">
+        <h2 id="task-list-title">Your tasks</h2>
+        <p id="empty-message" class="empty-message">
+          No study tasks yet. Add your first task above to get started!
+        </p>
+        <ul id="task-list" class="task-list"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Keep going — you are closer than you think.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
